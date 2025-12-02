@@ -1,0 +1,8 @@
+{
+  "name": "NetMirror",
+  "description": "Netflix, PrimeVideo, Disney+ Hotstar Contents",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/Sushan64/NetMirror-Extension/builds/plugins.json"
+  ]
+}
