@@ -1,8 +1,0 @@
-{
-  "name": "Prime Repository",
-  "description": "Cine Stream, Moviebox, NetMirror, Stream Play",
-  "manifestVersion": 1,
-  "pluginLists": [
-    "https://raw.githubusercontent.com/muhammadasadullah1258/Mycloudstreamrepo/refs/heads/main/plugins.json"
-  ]
-}
