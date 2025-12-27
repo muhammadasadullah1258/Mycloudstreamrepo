@@ -1,8 +1,0 @@
-{
-  "name": "Abdullah Repository",
-  "description": "Moviebox, NetMirror",
-  "manifestVersion": 1,
-  "pluginLists": [
-    "https://raw.githubusercontent.com/muhammadasadullah1258/Mycloudstreamrepo/refs/heads/main/plugins%20(1).json"
-  ]
-}
