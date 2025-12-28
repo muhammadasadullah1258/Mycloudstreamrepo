@@ -1,0 +1,8 @@
+{
+  "name": "Prime Repository",
+  "description": "YouTube",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/muhammadasadullah1258/Mycloudstreamrepo/refs/heads/main/untitled.json"
+  ]
+}
