@@ -1,0 +1,8 @@
+{
+  "name": "Prime repository",
+  "description": "Netflix, PrimeVideo, Moviebox, StreamPlay",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/muhammadasadullah1258/Mycloudstreamrepo/refs/heads/main/Extra%20plugins.json"
+  ]
+}
