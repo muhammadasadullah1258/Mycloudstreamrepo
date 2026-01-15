@@ -1,9 +1,0 @@
-{
-  "iconUrl": "https://raw.githubusercontent.com/Kraptor123/cs-kraptor/refs/heads/master/.github/icons/logo/kraptorfavicon.png",
-  "name": "YouTube repository",
-  "description": "YouTube",
-  "manifestVersion": 1,
-  "pluginLists": [
-    "https://raw.githubusercontent.com/muhammadasadullah1258/TestPlugins/refs/heads/builds/plugins.json"
-  ]
-}
