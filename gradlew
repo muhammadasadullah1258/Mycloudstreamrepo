@@ -6,11 +6,16 @@
 ##
 ##############################################################################
 
-# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
+# Add default JVM options here.
+DEFAULT_JVM_OPTS="-Xmx64m -Xms64m"
 
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
+
+# Use the maximum available, or set manually.
+if [ -n "$JAVA_OPTS" ] ; then
+    DEFAULT_JVM_OPTS="$DEFAULT_JVM_OPTS $JAVA_OPTS"
+fi
 
 warn () {
     echo "$*"
@@ -49,9 +54,10 @@ fi
 "$JAVACMD" -version > /dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH."
 
 # Setup Gradle home
-GRADLE_HOME="$PRGDIR/gradle/wrapper"
+GRADLE_HOME="$PRGDIR"
 
-CLASSPATH="$GRADLE_HOME/gradle-wrapper.jar"
+# For the wrapper, we need the jar
+CLASSPATH="$PRGDIR/gradle/wrapper/gradle-wrapper.jar"
 
 # Start Gradle
 exec "$JAVACMD" $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
