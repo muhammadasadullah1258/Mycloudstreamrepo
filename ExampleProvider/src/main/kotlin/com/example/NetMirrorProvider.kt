@@ -1,26 +1,28 @@
 package com.example
 
 import com.lagradost.cloudstream3.*
-import com.lagradost.cloudstream3.utils.AppUtils.toJson
 import org.jsoup.Jsoup
 
-class NetMirrorProvider : MainAPI() { // Provider hamesha MainAPI hota hai
+class NetMirrorProvider : MainAPI() {
+
     override var name = "NetMirror"
     override var mainUrl = "https://netmirror2.bio"
     override val supportedTypes = setOf(TvType.Movie)
 
     override suspend fun search(query: String): List<SearchResponse> {
         val url = "$mainUrl/search?q=$query"
-        val response = app.get(url).text
-        val document = Jsoup.parse(response)
-        
-        return document.select("a.movie-link").map {
+        val document = Jsoup.parse(app.get(url).text)
+
+        return document.select("a").mapNotNull {
             val title = it.text()
             val href = it.attr("href")
-            // CloudStream search responses is format mein hoti hain
-            newMovieSearchResponse(title, href, TvType.Movie) {
-                this.posterUrl = "" // Poster ka link yahan ayega
-            }
+            if (title.isNotBlank() && href.startsWith("/")) {
+                newMovieSearchResponse(
+                    title,
+                    mainUrl + href,
+                    TvType.Movie
+                )
+            } else null
         }
     }
 }
