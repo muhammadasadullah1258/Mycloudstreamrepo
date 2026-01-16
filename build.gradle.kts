@@ -1,7 +1,12 @@
-plugins {
-    id("com.android.library") version "8.2.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
-    id("cloudstream.plugin") version "1.0.0" apply false
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+    dependencies {
+        classpath("com.github.recloudstream:gradle:master-SNAPSHOT")
+    }
 }
 
 allprojects {
