@@ -1,29 +1,21 @@
 plugins {
-    id("com.android.library") // Android Library
-    kotlin("android")         // Kotlin Android support
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("cloudstream.plugin")
 }
 
 android {
-    namespace = "com.muhammadasadullah.cloudstream.plugin" // Safe namespace
-    compileSdk = 35
+    namespace = "com.example"
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 34
     }
 
     buildFeatures {
         buildConfig = true
         viewBinding = true
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -32,26 +24,12 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 }
 
-// Plugin version
 version = 1
 
 cloudstream {
-    description = "Lorem ipsum"
-    authors = listOf("Cloudburst", "Luna712")
-
-    /**
-     * Status int as one of the following:
-     * 0: Down
-     * 1: Ok
-     * 2: Slow
-     * 3: Beta-only
-     **/
+    description = "NetMirror CloudStream Plugin"
+    authors = listOf("Asad")
     status = 1
-
     tvTypes = listOf("Movie")
-
-    requiresResources = true
     language = "en"
-
-    iconUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png"
 }
